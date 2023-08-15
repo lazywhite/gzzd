@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
@@ -17,19 +17,19 @@ spec:
       containers:
         - env:
             - name: masterUrl
-              value: "https://111.111.111.111:6443"
+              value: "https://10.1.109.69:6443"
             - name: token
-              value: ""
+              value: "eyJhbGciOiJSUzI1NiIsImtpZCI6ImFQRnpjRVJrOGZYVTFoMW0wQVhiMV9tQ0ZhSDVnenU3T3BHZkVIcEtrWmsifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiLCJrM3MiXSwiZXhwIjoxNzIzNTM2NjEzLCJpYXQiOjE2OTIwMDA2MTMsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJkZWZhdWx0Iiwic2VydmljZWFjY291bnQiOnsibmFtZSI6ImFkbWluLXVzZXIiLCJ1aWQiOiIzYmY3Zjk1My04YTNkLTRkYmItOGMzMC1kYzFkNzEwNjE5MTAifX0sIm5iZiI6MTY5MjAwMDYxMywic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OmRlZmF1bHQ6YWRtaW4tdXNlciJ9.0FBRJ-nQ5m1CMM-emNYs1KWjFw8hqp2fV4tsrubxdVyo1VE_wLLEv0xKlZ_JpPv149Yn78lchryhhyPE0sKkwZ5qYASNZTKcE8-hNS85b5F9B-GWTzh9zrQtFFLiHM7eqkeq5Uj383SFEsl3IshvgbIxB3ZX57yTHikoRvWnnhK4mopiVZOepTtH0A0OCGR3ejF0hwKbAtGdUtM9BkrcmObEheZm2Glg1G8R6YSMyZLkVV5Nd58CWf71FAaXQuuHGnC-F7yVixFTfZE_kNBgg7Rl8e2E4ar2bll_iXRRvKAvdtu0ydVupygkv1OoA1C0vS-qwOP4ns_80MCvMArkzw"
             - name: spring.profiles.active
               value: test
             - name: namespace
-              value: test
+              value: production
             - name: proxy.server.uiIp
-              value: "111.111.111.112"
+              value: "10.1.109.69"
             - name: proxy.server.nodePort
               value: "31113"
             - name: proxy.server.proxyIp
-              value: "serverside-ui"
+              value: "serverside-ui.default"
           image: registry.cn-hangzhou.aliyuncs.com/19/serverside-ui:0.0.1
           imagePullPolicy: Always
           name: serverside-ui
